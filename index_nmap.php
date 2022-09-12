@@ -1,4 +1,6 @@
 <?php
+# do not forget to set the sticky bit 
+# chmod +s /usr/sbin/lft
 $starttime = time();
 print shell_exec('for i in `seq 1 254`;do (LANG=C lft 192.168.4.$i | grep trace | grep \'(\' &);done | sed \'s#.* to \(\(.*\).fritz.box\) (\(.*\)):.*#<tr><td></td>' .
 	'<td><a href="http://\1" target="_blank">\2</a></td><td><a href="http://\3/" target="_blank">\3</a></td><td><a href="nmap-hostinfo.php?ip=\3" target="_blank">' .
